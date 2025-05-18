@@ -7,7 +7,7 @@
     "./client": "./src/client.ts"
   },
   "scripts": {
-    "db:generate": "pnpx drizzle-kit generate"
+    "db:generate": "npx drizzle-kit generate"
   },
   "keywords": [],
   "author": "",
