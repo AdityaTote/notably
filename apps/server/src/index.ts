@@ -3,9 +3,13 @@ import { serve } from '@hono/node-server';
 import { cors } from 'hono/cors';
 import { Env } from '@server/types/bindings';
 import { auth } from '@server/lib/auth';
+import { prettyJSON } from 'hono/pretty-json';
+import { poweredBy } from 'hono/powered-by';
+import { logger } from 'hono/logger';
 
 const app = new Hono<{ Bindings: Env }>();
 
+// middlewares
 app.use(
     '/api/*',
     cors({
@@ -17,6 +21,9 @@ app.use(
         credentials: true,
     })
 );
+app.use(prettyJSON());
+app.use(poweredBy());
+app.use(logger());
 
 app.get('/', (c) => {
     return c.text('Hello Hono!');
