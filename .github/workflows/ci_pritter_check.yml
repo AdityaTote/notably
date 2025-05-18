@@ -1,4 +1,4 @@
-name: Build
+name: Pritter-check
 on:
     push:
     pull_request:
