@@ -1,0 +1,32 @@
+name: Build
+on:
+    push:
+    pull_request:
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        env:
+            TURSO_DATABASE_URL: ${{ secrets.TURSO_DATABASE_URL }}
+            TURSO_AUTH_TOKEN: ${{ secrets.TURSO_AUTH_TOKEN }}
+        steps:
+            # clone the repo
+            - uses: actions/checkout@v3
+
+            - name: install Nodejs
+              uses: actions/setup-node@v3
+              with:
+                  node-version: "22"
+
+            - name: install pnpm
+              uses: pnpm/action-setup@v2
+              with:
+                  version: 8
+
+            - name: install dependencies
+              run: pnpm install
+
+            - name: generate drizzle client
+              run: pnpm db:generate
+
+            - name: build application
+              run: pnpm build
