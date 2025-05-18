@@ -1,7 +1,0 @@
-export default function Home() {
-    return (
-        <div className="flex bg-red-500">
-            <div>hi there</div>
-        </div>
-    )
-}

@@ -1,14 +1,17 @@
 {
-  "name": "server",
-  "scripts": {
-    "dev": "wrangler dev",
-    "deploy": "wrangler deploy --minify"
-  },
-  "dependencies": {
-    "hono": "^4.7.6"
-  },
-  "devDependencies": {
-    "@cloudflare/workers-types": "^4.20250214.0",
-    "wrangler": "^4.4.0"
-  }
+    "name": "server",
+    "scripts": {
+        "dev": "wrangler dev",
+        "deploy": "wrangler deploy --minify"
+    },
+    "dependencies": {
+        "@hono/node-server": "^1.14.1",
+        "better-auth": "^1.2.8",
+        "hono": "^4.7.6"
+    },
+    "devDependencies": {
+        "@repo/db": "workspace:*",
+        "@cloudflare/workers-types": "^4.20250414.0",
+        "wrangler": "^4.4.0"
+    }
 }

@@ -1,11 +1,9 @@
-import { drizzle } from 'drizzle-orm/libsql'
-import { authToken, url } from './constant'
+import { drizzle } from 'drizzle-orm/libsql';
+import { authToken, url } from './constant';
 
-const db = drizzle({
+export const db = drizzle({
     connection: {
         url: url,
         authToken: authToken,
     },
-})
-
-export default db
+});

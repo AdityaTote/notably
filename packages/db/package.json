@@ -1,25 +1,26 @@
 {
-  "name": "db",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "exports": {
-    "./client": "./src/client.ts"
-  },
-  "scripts": {
-    "db:generate": "npx drizzle-kit generate"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "@repo/typescript-config": "workspace:*",
-    "drizzle-kit": "^0.30.6",
-    "tsx": "^4.19.3"
-  },
-  "dependencies": {
-    "@libsql/client": "^0.15.3",
-    "dotenv": "^16.5.0",
-    "drizzle-orm": "^0.41.0"
-  }
+    "name": "@repo/db",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "exports": {
+        "./client": "./src/index.ts",
+        "./schema": "./src/schemaTables.ts"
+    },
+    "scripts": {
+        "db:generate": "npx drizzle-kit generate"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "@repo/typescript-config": "workspace:*",
+        "drizzle-kit": "^0.30.6",
+        "tsx": "^4.19.3"
+    },
+    "dependencies": {
+        "@libsql/client": "^0.15.3",
+        "dotenv": "^16.5.0",
+        "drizzle-orm": "^0.41.0"
+    }
 }
